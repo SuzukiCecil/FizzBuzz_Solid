@@ -1,0 +1,71 @@
+@startuml
+class FizzBuzz {
+  - IRule $rule
+  - Iterator $it
+  - IPrinter $printer
+  + __construct(IRule $rule, Iterator $it, IPrinter $printer)
+  + void start()
+}
+
+interface Iterator
+
+class ArrayIterator {
+  - int $position
+  - int $array[]
+  + void rewind()
+  + int current()
+  + int key()
+  + void next()
+  + bool valid()
+}
+
+
+interface IPrinter {
+  + function print(string $value)
+}
+
+class TerminalPrinter {
+  + function print(string $value) 
+}
+
+abstract class AbstractRule {
+  # AbstractRule $nextRule
+  + __construct(?AbstractRule $nextRule)
+  {static} AbstractRule build(?AbstractRule $nextRule)
+}
+interface IRule {
+  {abstract} string apply(string $value, int $number)
+}
+class FizzRule {
+  + __construct(?AbstractRule $nextRule)
+  + string apply(string $value, int $number)
+}
+class BuzzRule {
+  + __construct(?AbstractRule $nextRule)
+  + string apply(string $value, int $number)
+}
+class BizzRule {
+  + __construct(?AbstractRule $nextRule)
+  + string apply(string $value, int $number)
+}
+class NumericRule {
+  + __construct(?AbstractRule $nextRule)
+  + string apply(string $value, int $number)
+}
+IRule <|.. FizzRule
+IRule <|.. BuzzRule
+IRule <|.. BizzRule
+IRule <|.. NumericRule
+AbstractRule <|-- FizzRule
+AbstractRule <|-- BuzzRule
+AbstractRule <|-- BizzRule
+AbstractRule <|-- NumericRule
+
+IPrinter <|.. TerminalPrinter
+Iterator <|.. ArrayIterator
+
+FizzBuzz --> "1" IRule
+FizzBuzz --> "1" Iterator
+FizzBuzz --> "1" IPrinter
+
+@enduml
