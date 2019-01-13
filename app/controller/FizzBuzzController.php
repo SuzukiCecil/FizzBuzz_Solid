@@ -1,16 +1,16 @@
 <?php
 
-namespace App;
+namespace App\controller;
 
-use FizzBuzz\FizzBuzz;
-use FizzBuzz\FizzRule;
-use FizzBuzz\BuzzRule;
-use FizzBuzz\BizzRule;
-use FizzBuzz\NumericRule;
-use FizzBuzz\ArrayIterator;
-use FizzBuzz\TerminalPrinter;
+use FizzBuzz\service\FizzBuzz;
+use FizzBuzz\service\rule\FizzRule;
+use FizzBuzz\service\rule\BuzzRule;
+use FizzBuzz\service\rule\BizzRule;
+use FizzBuzz\service\rule\NumericRule;
+use FizzBuzz\service\iterator\ArrayIterator;
+use FizzBuzz\service\printer\TerminalPrinter;
 
-class Controller
+class FizzBuzzController
 {
 	public function index()
 	{

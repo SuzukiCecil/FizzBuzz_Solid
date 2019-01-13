@@ -1,10 +1,10 @@
 <?php
 
-use App\Controller;
+use App\controller\FizzBuzzController;
 
 require_once "bootstrap.php";
 
-$controller = new Controller();
+$controller = new FizzBuzzController();
 $controller->index();
 
 

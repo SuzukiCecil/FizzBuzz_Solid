@@ -1,5 +1,5 @@
 <?php
-namespace FizzBuzz;
+namespace FizzBuzz\service\printer;
 
 class TerminalPrinter implements IPrinter
 {

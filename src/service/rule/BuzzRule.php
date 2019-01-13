@@ -1,7 +1,7 @@
 <?php
-namespace FizzBuzz;
+namespace FizzBuzz\service\rule;
 
-class FizzRule extends AbstractRule
+class BuzzRule extends AbstractRule
 {
 	public function __construct($nextRule)
 	{
@@ -10,8 +10,8 @@ class FizzRule extends AbstractRule
 
     public function apply(array $values, $number)
     {
-        if($number % 3 === 0) {
-            $values[] = "Fizz";
+        if($number % 5 === 0) {
+            $values[] = "Buzz";
         }
         return is_null($this->nextRule)?$values:$this->nextRule->apply($values, $number);
     }

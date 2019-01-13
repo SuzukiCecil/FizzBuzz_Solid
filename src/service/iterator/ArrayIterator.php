@@ -1,5 +1,5 @@
 <?php
-namespace FizzBuzz;
+namespace FizzBuzz\service\iterator;
 
 class ArrayIterator implements \Iterator
 {

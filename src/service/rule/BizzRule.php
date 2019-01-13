@@ -1,5 +1,5 @@
 <?php
-namespace FizzBuzz;
+namespace FizzBuzz\service\rule;
 
 class BizzRule extends AbstractRule
 {

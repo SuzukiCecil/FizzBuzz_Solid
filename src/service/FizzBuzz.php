@@ -1,5 +1,7 @@
 <?php
-namespace FizzBuzz;
+namespace FizzBuzz\service;
+use FizzBuzz\service\rule\AbstractRule;
+use FizzBuzz\service\printer\IPrinter;
 
 class FizzBuzz
 {
