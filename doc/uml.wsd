@@ -25,7 +25,8 @@ interface IPrinter {
 }
 
 class TerminalPrinter {
-  + function print(string $value) 
+  + function __construct(string $characterSeparator, string $lineSeparator)
+  + function print(string $value)
 }
 
 abstract class AbstractRule {
@@ -34,23 +35,23 @@ abstract class AbstractRule {
   {static} AbstractRule build(?AbstractRule $nextRule)
 }
 interface IRule {
-  {abstract} string apply(string $value, int $number)
+  {abstract} string apply(array $values, int $number)
 }
 class FizzRule {
   + __construct(?AbstractRule $nextRule)
-  + string apply(string $value, int $number)
+  + string apply(array $values, int $number)
 }
 class BuzzRule {
   + __construct(?AbstractRule $nextRule)
-  + string apply(string $value, int $number)
+  + string apply(array $values, int $number)
 }
 class BizzRule {
   + __construct(?AbstractRule $nextRule)
-  + string apply(string $value, int $number)
+  + string apply(array $values, int $number)
 }
 class NumericRule {
   + __construct(?AbstractRule $nextRule)
-  + string apply(string $value, int $number)
+  + string apply(array $values, int $number)
 }
 IRule <|.. FizzRule
 IRule <|.. BuzzRule

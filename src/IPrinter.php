@@ -3,5 +3,5 @@ namespace FizzBuzz;
 
 interface IPrinter
 {
-	public function print($value);
+	public function print(array $values);
 }

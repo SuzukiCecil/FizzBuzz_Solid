@@ -3,14 +3,14 @@ namespace FizzBuzz;
 
 class TerminalPrinter implements IPrinter
 {
-	private $separator;
 
-	public function __construct(string $separator)
+	public function __construct(string $characterSeparator, string $lineSeparator)
 	{
-		$this->separator = $separator;
+		$this->characterSeparator = $characterSeparator;
+        $this->lineSeparator = $lineSeparator;
 	}
-	public function print($value)
+	public function print(array $values)
 	{
-		echo $value . $this->separator;
+	    echo implode($this->characterSeparator, $values) . $this->lineSeparator;
 	}
 }

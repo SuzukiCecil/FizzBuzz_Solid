@@ -17,7 +17,7 @@ class FizzBuzz
 	{
 
 		foreach($this->it as $key => $value) {
-			$this->printer->print($this->rule->apply("", $value));
+			$this->printer->print($this->rule->apply(array(), $value));
 		}
 	}
 }

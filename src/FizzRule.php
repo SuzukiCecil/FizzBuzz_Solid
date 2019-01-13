@@ -8,9 +8,11 @@ class FizzRule extends AbstractRule
 		parent::__construct($nextRule);
 	}
 
-	public function apply($value, $number)
-	{
-		$value .= ($number % 3 === 0)? "Fizz":"";
-		return is_null($this->nextRule)?$value:$this->nextRule->apply($value, $number);
-	}
+    public function apply(array $values, $number)
+    {
+        if($number % 3 === 0) {
+            $values[] = "Fizz";
+        }
+        return is_null($this->nextRule)?$values:$this->nextRule->apply($values, $number);
+    }
 }

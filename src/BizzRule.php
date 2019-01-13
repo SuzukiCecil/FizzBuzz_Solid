@@ -8,9 +8,11 @@ class BizzRule extends AbstractRule
 		parent::__construct($nextRule);
 	}
 
-	public function apply($value, $number)
+	public function apply(array $values, $number)
 	{
-		$value .= ($number % 7 === 0)? "Bizz":"";
-		return is_null($this->nextRule)?$value:$this->nextRule->apply($value, $number);
+	    if($number % 7 === 0) {
+	        $values[] = "Bizz";
+        }
+		return is_null($this->nextRule)?$values:$this->nextRule->apply($values, $number);
 	}
 }

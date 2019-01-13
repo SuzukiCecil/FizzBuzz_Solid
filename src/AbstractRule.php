@@ -15,5 +15,5 @@ abstract class AbstractRule
 		return new static($nextRule);
 	}
 
-	abstract public function apply($value, $number);
+	abstract public function apply(array $values, $number);
 }

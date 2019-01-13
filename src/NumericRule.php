@@ -8,9 +8,11 @@ class NumericRule extends AbstractRule
 		parent::__construct($nextRule);
 	}
 
-	public function apply($value, $number)
-	{
-		$value .= ($value === "")? $number:"";
-		return is_null($this->nextRule)?$value:$this->nextRule->apply($value, $number);
-	}
+    public function apply(array $values, $number)
+    {
+        if(count($values) === 0) {
+            $values[] = (string)$number;
+        }
+        return is_null($this->nextRule)?$values:$this->nextRule->apply($values, $number);
+    }
 }
